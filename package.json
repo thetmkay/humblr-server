@@ -1,0 +1,23 @@
+{
+  "name": "humblr",
+  "version": "0.0.0",
+  "description": "server for humblr chrome extension",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thetmkay/humblr-server.git"
+  },
+  "author": "thetmkay@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thetmkay/humblr-server/issues"
+  },
+  "homepage": "https://github.com/thetmkay/humblr-server",
+  "dependencies": {
+    "express": "^4.2.0"
+  }
+}
