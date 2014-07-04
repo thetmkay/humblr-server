@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/thetmkay/humblr-server",
   "dependencies": {
-    "express": "^4.2.0"
+    "express": "^4.2.0",
+    "twit": "~1.1.15",
+    "mongoskin": "~1.4.4",
+    "cookie-parser": "~1.3.2",
+    "express-session": "~1.6.1"
   }
 }
