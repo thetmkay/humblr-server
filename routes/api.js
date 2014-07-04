@@ -16,21 +16,30 @@ exports.setDb = function() {
 	mongo.loadDB(db);
 };
 
-exports.index = function(req,res) {
-  console.log('hi');
-  res.json({
-  	content : "hello world"
-  });
-};
-
 exports.tweet = function(req,res) {
 
-  console.log(req.params.url);
-  console.log(req.params.twitter_id);
-  res.json({
-  	"content": "hello world"
+  var hey = "Hey @",
+  	  segue = ", check out ",
+      username = req.params.username,
+      url = req.params.url,
+      title = " (" + req.params.title + ")",
+      url_length = 22;
+
+  if(url.length < 22) {
+    url_length = url.length;
+  }
+
+  var status = hey + username + segue;
+
+  if(hey.length + username.length + segue.length + url_length + title.length >= 140) {
+    status += req.params.title + " (" + url + ")";
+  } else {
+    status += url;
+  }
+
+  T.post('statuses/update', { status: status }, function(err, data, response) {
+    console.log(err);
+    res.json(data);
   });
-  // T.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {
-  //   console.log(data);
-  // })
+  
 };
